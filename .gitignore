@@ -26,3 +26,16 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio artifacts
+bin
+obj
+*.sln
+*.sdf
+*.backup
+*.aps
+*.user
+*.opensdf
+*.suo
+*.log
+*.tlog

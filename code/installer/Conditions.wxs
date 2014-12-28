@@ -1,0 +1,5 @@
+<Include>
+  <Condition Message='Windows XP/Windows Server 2003 x64 is currently blocked.'>
+    (NOT VersionNT64 = 502)
+  </Condition>
+</Include>

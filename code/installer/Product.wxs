@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?if $(var.platform)="x64" ?>
+    <?define platformalt = amd64 ?>
+    <?define systemfolder = System64Folder ?>
+  <?else?>
+    <?define platformalt = x86 ?>
+    <?define systemfolder = SystemFolder ?>
+  <?endif?>
+
+  <Product Id="*" Name="UxStyle" Language="1033" Version="0.2.4.1" Manufacturer="The Within Network, LLC" UpgradeCode="D6C38ADD-C2C7-42E8-BC0F-81FD70947B03">
+
+    <Package InstallerVersion="450" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="You already have a version of UxStyle installed that's the same or newer than this one." />
+
+    <?include Conditions.wxs ?>
+
+    <Media Id="1" Cabinet="bits.cab" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <Merge Id="msvc11_crt" DiskId="1" Language="1033" SourceFile="msm\Microsoft_VC120_CRT_$(var.platform).msm" />
+
+      <Directory Id="WindowsFolder" Name="Windows">
+
+        <Component>
+          <File Source="..\..\bin\$(var.platform)\$(var.Configuration)\unsignedthemes.exe" />
+
+          <ServiceInstall Id="UnsignedThemes_ServiceInstall" Name="UnsignedThemes" Type="ownProcess" LoadOrderGroup="AudioGroup" Start="auto" DisplayName="Unsigned Themes"
+                          Description="Enables the use of unsigned third-party themes." ErrorControl="ignore" />
+          
+          <ServiceControl Id="UnsignedThemes_ServiceControl" Name="UnsignedThemes" Start="install" Stop="uninstall" Remove="uninstall" Wait="yes" />
+          
+          <RegistryValue Id="EnableLogging" Action="write" Root="HKLM" Key="SYSTEM\CurrentControlSet\services\uxstyle\Parameters" Type="integer" Name="EnableLogging" Value="0" />
+          <RegistryValue Id="LogFile" Action="write" Root="HKLM" Key="SYSTEM\CurrentControlSet\services\uxstyle\Parameters" Type="string" Name="LogFile" Value="" />
+        </Component>
+
+        <Directory Id="$(var.systemfolder)" Name="System32">
+          <Directory Id="Drivers" Name="Drivers">
+
+            <Component>
+              <File Source="..\..\bin\driver\$(var.platformalt)\uxstyle.sys" />
+            </Component>
+
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Core" Title="Unsigned Themes Service" Level="1">
+      <MergeRef Id="msvc11_crt" />
+
+      <ComponentRef Id="uxstyle.sys" />
+      <ComponentRef Id="unsignedthemes.exe" />
+    </Feature>
+
+    <CustomActionRef Id="InstallDriver_Cmd"/>
+    <CustomActionRef Id="RemoveDriver_Cmd"/>
+    
+    <CustomActionRef Id="StartDriver_Cmd"/>
+    <CustomActionRef Id="StopDriver_Cmd"/>
+    
+  </Product>
+</Wix>

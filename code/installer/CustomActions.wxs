@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <SetProperty Id="InstallDriver_Cmd"
+                 Value='"sc.exe" create uxstyle type= kernel start= auto group= "File System" binPath= [!uxstyle.sys]'
+                 Sequence="execute" Before="InstallDriver_Cmd" />
+
+    <CustomAction Id="InstallDriver_Cmd" BinaryKey="WixCA" DllEntry="CAQuietExec"
+                  Execute="deferred" Return="check" Impersonate="no"/>
+
+    <SetProperty Id="RemoveDriver_Cmd"
+                 Value='"sc.exe" delete uxstyle'
+                 Sequence="execute" Before="RemoveDriver_Cmd" />
+
+    <CustomAction Id="RemoveDriver_Cmd" BinaryKey="WixCA" DllEntry="CAQuietExec"
+                  Execute="deferred" Return="check" Impersonate="no"/>
+
+    <SetProperty Id="StartDriver_Cmd"
+                 Value='"sc.exe" start uxstyle'
+                 Sequence="execute" Before="StartDriver_Cmd" />
+
+    <CustomAction Id="StartDriver_Cmd" BinaryKey="WixCA" DllEntry="CAQuietExec"
+                  Execute="deferred" Return="check" Impersonate="no"/>
+
+    <SetProperty Id="StopDriver_Cmd"
+             Value='"sc.exe" stop uxstyle'
+             Sequence="execute" Before="StopDriver_Cmd" />
+
+    <CustomAction Id="StopDriver_Cmd" BinaryKey="WixCA" DllEntry="CAQuietExec"
+                  Execute="deferred" Return="check" Impersonate="no"/>
+
+    <InstallExecuteSequence>
+      <Custom Action="RemoveDriver_Cmd" After="DeleteServices">
+        ?uxstyle.sys = 3
+      </Custom>
+
+      <Custom Action="StopDriver_Cmd" After="StopServices">
+        ?uxstyle.sys = 3
+      </Custom>
+
+      <Custom Action="InstallDriver_Cmd" After="InstallFiles">
+        $uxstyle.sys = 3
+      </Custom>
+
+      <Custom Action="StartDriver_Cmd" Before="StartServices">
+        $uxstyle.sys = 3
+      </Custom>
+    </InstallExecuteSequence>
+  </Fragment>
+  
+</Wix>

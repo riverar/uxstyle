@@ -1,0 +1,1 @@
+signtool.exe sign /v /ac ..\..\cert\MSCV-GlobalSign.cer /s My /n "The Within Network LLC" /t http://timestamp.globalsign.com/scripts/timstamp.dll ..\..\bin\driver\%__ARCH__%\uxpatch.sys
