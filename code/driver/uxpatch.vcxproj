@@ -126,7 +126,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
     <OutDir>..\..\bin\driver\x86\</OutDir>
     <IntDir>..\..\bin\driver\x86\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
   </PropertyGroup>
   <PropertyGroup>
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -134,27 +134,27 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'">
     <OutDir>..\..\bin\driver\x86\</OutDir>
     <IntDir>..\..\bin\driver\x86\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Release|Win32'">
     <OutDir>..\..\bin\driver\x86\</OutDir>
     <IntDir>..\..\bin\driver\x86\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|Win32'">
     <OutDir>..\..\bin\driver\x86\</OutDir>
     <IntDir>..\..\bin\driver\x86\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|Win32'">
     <OutDir>..\..\bin\driver\x86\</OutDir>
     <IntDir>..\..\bin\driver\x86\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'">
     <OutDir>..\..\bin\driver\x86\</OutDir>
     <IntDir>..\..\bin\driver\x86\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
     <TimeStampServer>http://timestamp.globalsign.com/scripts/timstamp.dll</TimeStampServer>
     <DiagnosticMode>true</DiagnosticMode>
   </PropertyGroup>
@@ -187,7 +187,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'">
     <OutDir>..\..\bin\driver\amd64\</OutDir>
     <IntDir>..\..\bin\driver\amd64\int\</IntDir>
-    <TargetName>uxstyle</TargetName>
+    <TargetName>elytsxu</TargetName>
     <DiagnosticMode>true</DiagnosticMode>
     <TimeStampServer>http://timestamp.globalsign.com/scripts/timstamp.dll</TimeStampServer>
   </PropertyGroup>
