@@ -148,7 +148,7 @@ DetermineVersionCompat( VOID )
 			g_CodeBytes.ulByteCount = sizeof(g_CodeBytes_32bit_WinXP_WinServer03);
 			g_CodeBytes.pBytes = (PUCHAR)&g_CodeBytes_32bit_WinXP_WinServer03;
 		}
-		else if (osVer.dwMajorVersion == 6)
+        else if (osVer.dwMajorVersion == 6 || (osVer.dwMajorVersion == 10 && osVer.dwMinorVersion == 0))
 		{
 			g_CodeBytes.ulByteCount = sizeof(g_CodeBytes_32bit_WinVista_greater);
 			g_CodeBytes.pBytes = (PUCHAR)&g_CodeBytes_32bit_WinVista_greater;
