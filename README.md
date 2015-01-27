@@ -20,6 +20,7 @@ UxStyle is a bit of software that relaxes Windows theme signature requirements t
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows codenamed "Threshold"
+* Windows 10 Technical Preview
 
 ## Building ##
 
