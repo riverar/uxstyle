@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-  <?if $(var.platform)="x64" ?>
+  <?if $(var.Platform) = x64 ?>
     <?define platformalt = amd64 ?>
     <?define systemfolder = System64Folder ?>
   <?else?>
     <?define platformalt = x86 ?>
     <?define systemfolder = SystemFolder ?>
-  <?endif?>
+  <?endif?> 
 
   <Product Id="*" Name="UxStyle" Language="1033" Version="0.2.4.1" Manufacturer="The Within Network, LLC" UpgradeCode="D6C38ADD-C2C7-42E8-BC0F-81FD70947B03">
 
@@ -21,12 +21,12 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
 
-      <Merge Id="msvc11_crt" DiskId="1" Language="1033" SourceFile="msm\Microsoft_VC120_CRT_$(var.platform).msm" />
+      <Merge Id="msvc11_crt" DiskId="1" Language="1033" SourceFile="msm\Microsoft_VC120_CRT_$(var.Platform).msm" />
 
       <Directory Id="WindowsFolder" Name="Windows">
 
         <Component>
-          <File Source="..\..\bin\$(var.platform)\$(var.Configuration)\unsignedthemes.exe" />
+          <File Source="..\..\bin\$(var.Platform)\$(var.Configuration)\unsignedthemes.exe" />
 
           <ServiceInstall Id="UnsignedThemes_ServiceInstall" Name="UnsignedThemes" Type="ownProcess" LoadOrderGroup="AudioGroup" Start="auto" DisplayName="Unsigned Themes"
                           Description="Enables the use of unsigned third-party themes." ErrorControl="ignore" />
@@ -41,7 +41,7 @@
           <Directory Id="Drivers" Name="Drivers">
 
             <Component>
-              <File Source="..\..\bin\driver\$(var.platformalt)\uxstyle.sys" />
+              <File Source="..\..\bin\driver\$(var.platformalt)\elytsxu.sys" />
             </Component>
 
           </Directory>
@@ -52,7 +52,7 @@
     <Feature Id="Core" Title="Unsigned Themes Service" Level="1">
       <MergeRef Id="msvc11_crt" />
 
-      <ComponentRef Id="uxstyle.sys" />
+      <ComponentRef Id="elytsxu.sys" />
       <ComponentRef Id="unsignedthemes.exe" />
     </Feature>
 

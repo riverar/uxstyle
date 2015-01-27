@@ -13,7 +13,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>..\..\bin\x86\debug\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>Debug;platform=x86</DefineConstants>
+    <DefineConstants>Debug;</DefineConstants>
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension</LinkerAdditionalOptions>
     <WixVariables>
     </WixVariables>
@@ -29,15 +29,17 @@
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension -cultures:en-us</LinkerAdditionalOptions>
     <WixVariables>
     </WixVariables>
-    <DefineConstants>platform=x86</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <SuppressAllWarnings>False</SuppressAllWarnings>
     <Pedantic>True</Pedantic>
     <SuppressIces>ICE03</SuppressIces>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <OutputPath>..\..\bin\x64\debug\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>Debug;platform=x64</DefineConstants>
+    <DefineConstants>Debug;</DefineConstants>
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension</LinkerAdditionalOptions>
     <WixVariables>
     </WixVariables>
@@ -53,11 +55,13 @@
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension -cultures:en-us</LinkerAdditionalOptions>
     <WixVariables>
     </WixVariables>
-    <DefineConstants>platform=x64</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <SuppressAllWarnings>False</SuppressAllWarnings>
     <Pedantic>True</Pedantic>
     <SuppressIces>ICE03</SuppressIces>
     <SuppressValidation>False</SuppressValidation>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Conditions.wxs" />
