@@ -30,7 +30,6 @@
 # Visual Studio artifacts
 bin
 obj
-*.sln
 *.sdf
 *.backup
 *.aps
