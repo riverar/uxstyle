@@ -31,7 +31,7 @@
           <ServiceInstall Id="UnsignedThemes_ServiceInstall" Name="UnsignedThemes" Type="ownProcess" LoadOrderGroup="AudioGroup" Start="auto" DisplayName="Unsigned Themes"
                           Description="Enables the use of unsigned third-party themes." ErrorControl="ignore" />
           
-          <ServiceControl Id="UnsignedThemes_ServiceControl" Name="UnsignedThemes" Start="install" Stop="uninstall" Remove="uninstall" Wait="yes" />
+          <ServiceControl Id="UnsignedThemes_ServiceControl" Name="UnsignedThemes" Start="install" Stop="uninstall" Remove="both" Wait="yes" />
           
           <RegistryValue Id="EnableLogging" Action="write" Root="HKLM" Key="SYSTEM\CurrentControlSet\services\uxstyle\Parameters" Type="integer" Name="EnableLogging" Value="0" />
           <RegistryValue Id="LogFile" Action="write" Root="HKLM" Key="SYSTEM\CurrentControlSet\services\uxstyle\Parameters" Type="string" Name="LogFile" Value="" />

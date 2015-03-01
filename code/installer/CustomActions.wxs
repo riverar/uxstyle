@@ -13,7 +13,7 @@
                  Sequence="execute" Before="RemoveDriver_Cmd" />
 
     <CustomAction Id="RemoveDriver_Cmd" BinaryKey="WixCA" DllEntry="CAQuietExec"
-                  Execute="deferred" Return="check" Impersonate="no"/>
+                  Execute="deferred" Return="ignore" Impersonate="no"/>
 
     <SetProperty Id="StartDriver_Cmd"
                  Value='"sc.exe" start uxstyle'
@@ -30,9 +30,7 @@
                   Execute="deferred" Return="check" Impersonate="no"/>
 
     <InstallExecuteSequence>
-      <Custom Action="RemoveDriver_Cmd" After="DeleteServices">
-        ?elytsxu.sys = 3
-      </Custom>
+	  <Custom Action="RemoveDriver_Cmd" After="DeleteServices" />
 
       <Custom Action="StopDriver_Cmd" After="StopServices">
         ?elytsxu.sys = 3

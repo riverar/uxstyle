@@ -12,7 +12,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>..\..\bin\x86\debug\</OutputPath>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug;</DefineConstants>
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension</LinkerAdditionalOptions>
     <WixVariables>
@@ -25,7 +25,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>..\..\bin\x86\release\</OutputPath>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension -cultures:en-us</LinkerAdditionalOptions>
     <WixVariables>
     </WixVariables>
@@ -38,7 +38,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <OutputPath>..\..\bin\x64\debug\</OutputPath>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug;</DefineConstants>
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension</LinkerAdditionalOptions>
     <WixVariables>
@@ -51,7 +51,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <OutputPath>..\..\bin\x64\release\</OutputPath>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
     <LinkerAdditionalOptions>-ext WixUtilExtension -ext WixUIExtension -cultures:en-us</LinkerAdditionalOptions>
     <WixVariables>
     </WixVariables>
