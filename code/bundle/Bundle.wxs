@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
-  <Bundle Name="UxStyle" Version="0.2.4.1" Manufacturer="The Within Network, LLC" UpgradeCode="c84fa50d-7d4b-4fe5-91d9-884008c3287e"
+  <Bundle Name="UxStyle" Version="0.2.4.2" Manufacturer="The Within Network, LLC" UpgradeCode="c84fa50d-7d4b-4fe5-91d9-884008c3287e"
           DisableRepair="yes" DisableModify="yes">
     
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
