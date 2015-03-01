@@ -126,12 +126,12 @@ DetermineVersionCompat( VOID )
 
 	if (g_bIs64Bit)
 	{
-		if ((osVer.dwMajorVersion == 10 && osVer.dwMinorVersion == 0) || (osVer.dwMajorVersion == 6 && osVer.dwMinorVersion < 3))
+		if ((osVer.dwMajorVersion == 6 && osVer.dwMinorVersion < 3))
 		{
 			g_CodeBytes.ulByteCount = sizeof(g_CodeBytes_64bit_WinVista_greater);
 			g_CodeBytes.pBytes = (PUCHAR)&g_CodeBytes_64bit_WinVista_greater;
 		}
-		else if(osVer.dwMajorVersion == 6 && osVer.dwMinorVersion > 3)
+		else if ((osVer.dwMajorVersion == 6 && osVer.dwMinorVersion > 3) || (osVer.dwMajorVersion == 10 && osVer.dwMinorVersion == 0))
 		{
 			g_CodeBytes.ulByteCount = sizeof(g_CodeBytes_64bit_Win8_greater);
 			g_CodeBytes.pBytes = (PUCHAR)&g_CodeBytes_64bit_Win8_greater;
