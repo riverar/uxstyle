@@ -11,7 +11,7 @@
 
   <Product Id="*" Name="UxStyle" Language="1033" Version="0.2.4.2" Manufacturer="The Within Network, LLC" UpgradeCode="D6C38ADD-C2C7-42E8-BC0F-81FD70947B03">
 
-    <Package InstallerVersion="450" Compressed="yes" InstallScope="perMachine" />
+    <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="You already have a version of UxStyle installed that's the same or newer than this one." />
 
