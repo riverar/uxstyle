@@ -1,5 +1,8 @@
 # UxStyle #
 
+## Important Note ##
+UxStyle is now in read-only mode and will not be updated. There are known compatibility issues with Windows 10 Creators Update (and above) that have will not be resolved due to lack of interest, use, and time.
+
 ## About ##
 
 UxStyle is a bit of software that relaxes Windows theme signature requirements to enable third-party customization. Specifically, UxStyle consists of a tiny system service and a kernel driver that are loaded into memory where they hang out until reboot. No file system changes are made.
